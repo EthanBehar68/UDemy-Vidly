@@ -8,7 +8,7 @@ namespace Vidly._CheatSheets
     /// <summary>
     /// JUST EXAMPLES OF RANDOM THINGS
     /// </summary>
-    public class IgnoreMe
+    public class _IgnoreMe
     {
         // Examples of other ActionResults
         // return Content("Hello World!");
