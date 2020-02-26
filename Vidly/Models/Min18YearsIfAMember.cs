@@ -8,6 +8,8 @@ namespace Vidly.Models
 {
     public class Min18YearsIfAMember : ValidationAttribute
     {
+        // Doesn't work with client-side validation
+        // Unless customer jquery is implemented
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var customer = (Customer)validationContext.ObjectInstance;

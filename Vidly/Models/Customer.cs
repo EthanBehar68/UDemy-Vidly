@@ -6,13 +6,13 @@ namespace Vidly.Models
     public class Customer
     {
         public int Id { get; set; }
-        
+
         [Required(ErrorMessage = "Please enter the customer's name.")] //override validation error message (52 Data Annontation)
         [StringLength(255)]
         public string Name { get; set; }
-       
+
         public bool IsSubscribedToNewsletter { get; set; }
-        
+
         [Display(Name = "Date of Birth")]
         [Min18YearsIfAMember]
         public DateTime? BirthDate { get; set; }
@@ -26,3 +26,13 @@ namespace Vidly.Models
 
     }
 }
+
+/* Types of Validation Attributes
+ *  [Required] 
+ *  [StringLength(255)] 
+ *  [Range(1, 10)] 
+ *  [Compare(“OtherProperty”)] 
+ *  [Phone] • [EmailAddress] 
+ *  [Url] 
+ *  [RegularExpression(“…”)]
+*/

@@ -317,6 +317,7 @@
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="_CheatSheets\Building-Forms-Cheat-Sheet.pdf" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
+    <Content Include="_CheatSheets\Implementing-Validation-Cheat-Sheet.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
