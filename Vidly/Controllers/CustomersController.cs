@@ -57,6 +57,17 @@ namespace Vidly.Controllers
         //public ActionResult Create(NewCustomerViewModel viewModel) // Model Minding - MVC automatically binds this model to the request data
         public ActionResult Save(Customer customer) // B/c all of our keys in teh form data of New.cshtml are prefixed with Customer
         {
+            if(!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", viewModel);
+            }
+
             if(customer.Id == 0)
                 _context.Customers.Add(customer);
             else

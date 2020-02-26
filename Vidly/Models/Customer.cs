@@ -7,7 +7,7 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Please enter the customer's name.")] //override validation error message (52 Data Annontation)
         [StringLength(255)]
         public string Name { get; set; }
        
@@ -21,7 +21,7 @@ namespace Vidly.Models
 
         //Foreign Key
         [Display(Name = "Membership Type")]
-        public byte MembershipTypeId { get; set; }
+        public byte MembershipTypeId { get; set; } // byte makes this implicity required b/c byte is not nullable (51 Styling Validation Errors)
 
     }
 }
