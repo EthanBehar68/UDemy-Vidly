@@ -338,6 +338,8 @@
     <Content Include="_CheatSheets\Implementing-Validation-Cheat-Sheet.pdf" />
     <Content Include="_CheatSheets\Building-Web-APIs-Cheat-Sheet.pdf" />
     <Content Include="_CheatSheets\Resolving-exception-for-updating-Id.pdf" />
+    <Content Include="_CheatSheets\jQuery.pdf" />
+    <Content Include="_CheatSheets\jquery-tutorial-beginners.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
