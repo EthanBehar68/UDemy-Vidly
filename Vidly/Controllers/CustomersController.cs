@@ -25,10 +25,11 @@ namespace Vidly.Controllers
 
         public ViewResult Index()
         {
+            //Bootbox is getting customers from api call so no need to return customers here
             // the use of Include statment is called Eager Loading
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList(); // Immediately query DB; if not ToList it is deferred until iteration(in View(c) - Called Deferred Execution in Identity Framework
+            //var customers = _context.Customers.Include(c => c.MembershipType).ToList(); // Immediately query DB; if not ToList it is deferred until iteration(in View(c) - Called Deferred Execution in Identity Framework
 
-            return View(customers);
+            return View();//customers);
         }
 
         public ActionResult Details(int id)
