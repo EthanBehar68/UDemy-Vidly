@@ -23,7 +23,6 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
-
         public ViewResult Index()
         {
             //Bootbox is getting customers from api call so no need to return customers here
