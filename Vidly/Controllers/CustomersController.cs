@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Vidly.Models;
 using System.Data.Entity;
 using Vidly.ViewModels;
+using AutoMapper;
 
 namespace Vidly.Controllers
 {
@@ -81,10 +82,12 @@ namespace Vidly.Controllers
                 // TryUpdateModel(customer, "", new string[] { "Name", "Email" });
 
                 //Mapper.Map(customer, customerInDb); to avoid security issues use a Dto(Data Transfer Object) in parameter - Example (UpdateCustomerDto customer)
-                customerInDb.Name = customer.Name;
-                customerInDb.BirthDate = customer.BirthDate;
-                customerInDb.MembershipTypeId = customer.MembershipTypeId;
-                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+                Mapper.Map(customer, customerInDb);
+                // might cause issues check the save
+                //customerInDb.Name = customer.Name;
+                //customerInDb.BirthDate = customer.BirthDate;
+                //customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                //customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
             }
             _context.SaveChanges();
 

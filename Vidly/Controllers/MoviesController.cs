@@ -4,6 +4,7 @@ using Vidly.Models;
 using System.Data.Entity;
 using Vidly.ViewModels;
 using System;
+using AutoMapper;
 
 namespace Vidly.Controllers
 {
@@ -23,9 +24,11 @@ namespace Vidly.Controllers
         }
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(m => m.Genre).ToList();
+            //Bootbox is getting customers from api call so no need to return customers here
+            // the use of Include statment is called Eager Loading
+            //var movies = _context.Movies.Include(m => m.Genre).ToList();
 
-            return View(movies);
+            return View();// movies);
         }
 
         public ActionResult Details(int id)
@@ -71,12 +74,13 @@ namespace Vidly.Controllers
             else
             {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
-                movieInDb.Name = movie.Name;
-                movieInDb.ReleaseDate = movie.ReleaseDate;
-                movieInDb.GenreId = movie.GenreId;
-                movieInDb.NumberInStock = movie.NumberInStock;
+                Mapper.Map(movie, movieInDb);
+                // might cause issues check the save
+                //movieInDb.Name = movie.Name;
+                //movieInDb.ReleaseDate = movie.ReleaseDate;
+                //movieInDb.GenreId = movie.GenreId;
+                //movieInDb.NumberInStock = movie.NumberInStock;
             }
-
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Movies");
