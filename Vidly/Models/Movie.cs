@@ -32,5 +32,7 @@ namespace Vidly.Models
         [Range(1, 20, ErrorMessage = "Please enter a number between 1 and 20.")]
         [Display(Name = "Number In Stock")]
         public byte NumberInStock { get; set; }
+
+        public byte NumberAvailable { get; set; }
     }
 }
