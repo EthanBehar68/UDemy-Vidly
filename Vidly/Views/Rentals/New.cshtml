@@ -27,6 +27,10 @@
         </div>
     </div>
 
+    <div>
+        <label id="customerDiscount"></label>
+    </div>
+
     <button class="btn btn-primary">Submit</button>
 </form>
 
@@ -68,6 +72,7 @@
             ).on("typeahead:select", function (e, customer) {
                 vm.customerId = customer.id;
                 vm.delinquentStatus = customer.delinquent;
+                $('#customerDiscount').text("Customer's discount is " + customer.membershipType.discountRate + "%");
             });
 
             var movies = new Bloodhound({
@@ -112,15 +117,12 @@
                 return vm.movieIds.length > 0;
             }, "Please select at least one movie.");
 
-            
-
             // There's definitely a better way to do this... 
             // Like I would like to error the movie list instead of the movie input field
             // But for now I'll leave it on the movie input field
             // I probably won't come back to this.
             // The front-end logic is also broken b/c there's no 'remove movie' functionality
             // The clerk would have to refresh the page /shrug.
-
             $.validator.addMethod("validTooManyMovies", function () {
                 return vm.movieIds.length < 3;
             }, "Customers can only rent three movies at once.");
