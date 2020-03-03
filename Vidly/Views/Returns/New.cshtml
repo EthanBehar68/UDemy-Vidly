@@ -1,29 +1,26 @@
 ﻿@{
-    ViewBag.Title = "New Rental Form";
+    ViewBag.Title = "New Return Form";
 }
 
-<h2>New Rental Form</h2>
+<h2>New Return Form</h2>
 
-<form id="newRental">
+<form id="newReturn">
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
             <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" value="" class="form-control" />
         </div>
     </div>
-
     <div class="form-group">
         <label>Movie</label>
         <div class="tt-container">
             <input id="movie" name="movie" data-rule-validMovie="true" type="text" value="" class="form-control" />
-
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <ul id="movies" class="list-group">
-            </ul>
+            <ul id="movies" class="list-group"></ul>
         </div>
     </div>
 
@@ -33,15 +30,13 @@
 @*This isn't great JS code... its spaghetti
     We have mark up side-by-side business logic.
     This SHOULD be refactored but I will not be doing that
-    But be aware I'm aware its not the cleanest code.
-*@
+    But be aware I'm aware its not the cleanest code.*@
 
 @section scripts
 {
     @Scripts.Render("~/bundles/jqueryval");
     <script>
         $(document).ready(function () {
-
             var vm = {
                 movieIds: []
             };
@@ -57,8 +52,8 @@
 
             $('#customer').typeahead(
                 {
-                    minLenght: 3,
-                    highlight: true,
+                    minLength: 3,
+                    highlight: true
                 },
                 {
                     name: 'customers',
@@ -80,7 +75,7 @@
 
             $('#movie').typeahead(
                 {
-                    minLenght: 3,
+                    minLength: 3,
                     highlight: true,
                 },
                 {
@@ -98,22 +93,22 @@
 
             $.validator.addMethod("validCustomer", function () {
                 return vm.customerId && vm.customerId !== 0;
-
             }, "Please select a valid customer.");
 
             $.validator.addMethod("validMovie", function () {
                 return vm.movieIds.length > 0;
             }, "Please select at least one movie.");
 
-            var validator = $("#newRental").validate({
+            var validator = $("#newReturn").validate({
                 submitHandler: function () {
                     $.ajax({
-                        url: "/api/NewRentals",
+                        url: "/api/NewReturns",
                         method: "post",
                         data: vm
                     })
                         .done(function () {
-                            toastr.success("Rentals successfully recorded.");
+                            console.log("Successful Return.")
+                            toastr.success("Returns successfully recorded.");
 
                             $("#customer").typeahead("val", "");
                             $("#movie").typeahead("val", "");
@@ -126,11 +121,45 @@
                             validator.resetForm();
                         })
                         .fail(function () {
+                            console.log("Return failed.")
                             toastr.error("Something unexpected happened.");
                         });
                     return false;
                 }
             });
+
         });
     </script>
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

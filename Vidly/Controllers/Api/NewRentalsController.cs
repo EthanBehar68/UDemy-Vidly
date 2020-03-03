@@ -32,8 +32,8 @@ namespace Vidly.Controllers.Api
                 if (m.NumberAvailable == 0)
                     return BadRequest("Movie is not available.");
 
-                m.NumberAvailable -= 1;
-                
+                m.NumberAvailable--;
+
                 var rental = new Rental
                 {
                     Customer = customer,
@@ -75,7 +75,7 @@ namespace Vidly.Controllers.Api
         //            return BadRequest("Movie is not available.");
 
         //        m.NumberAvailable -= 1;
-                
+
         //        var rental = new Rental
         //        {
         //            Customer = customer,

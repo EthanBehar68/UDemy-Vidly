@@ -6,13 +6,12 @@ using System.Web.Mvc;
 
 namespace Vidly.Controllers
 {
-    public class RentalsController : Controller
+    public class ReturnsController : Controller
     {
-        // GET: Rentals
+        // GET: Returns
         public ActionResult New()
         {
             return View();
         }
-
     }
 }
