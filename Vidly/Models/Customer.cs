@@ -24,6 +24,8 @@ namespace Vidly.Models
         [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; } // byte makes this implicity required b/c byte is not nullable (51 Styling Validation Errors)
 
+        [Required]
+        public bool Delinquent { get; set; }
     }
 }
 

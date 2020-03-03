@@ -299,6 +299,14 @@
     <Compile Include="Migrations\202003030024590_SetNumberAvailableToNumberInStockForMovies.Designer.cs">
       <DependentUpon>202003030024590_SetNumberAvailableToNumberInStockForMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003031856036_DelinquentAddedToCustomers.cs" />
+    <Compile Include="Migrations\202003031856036_DelinquentAddedToCustomers.Designer.cs">
+      <DependentUpon>202003031856036_DelinquentAddedToCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003031857033_DelinquentAddedToCustomersCORRECTINGCasing.cs" />
+    <Compile Include="Migrations\202003031857033_DelinquentAddedToCustomersCORRECTINGCasing.Designer.cs">
+      <DependentUpon>202003031857033_DelinquentAddedToCustomersCORRECTINGCasing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Rental.cs" />
@@ -684,6 +692,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003030024590_SetNumberAvailableToNumberInStockForMovies.resx">
       <DependentUpon>202003030024590_SetNumberAvailableToNumberInStockForMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003031856036_DelinquentAddedToCustomers.resx">
+      <DependentUpon>202003031856036_DelinquentAddedToCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003031857033_DelinquentAddedToCustomersCORRECTINGCasing.resx">
+      <DependentUpon>202003031857033_DelinquentAddedToCustomersCORRECTINGCasing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

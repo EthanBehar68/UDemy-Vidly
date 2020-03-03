@@ -19,5 +19,8 @@ namespace Vidly.Dtos
         public byte MembershipTypeId { get; set; }
 
         public MembershipTypeDto MembershipType { get; set; }
+
+        [Required]
+        public bool Delinquent { get; set; }
     }
 }
