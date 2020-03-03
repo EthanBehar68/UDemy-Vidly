@@ -4,6 +4,7 @@ using Vidly.Models;
 using System.Data.Entity;
 using Vidly.ViewModels;
 using AutoMapper;
+using Vidly.Dtos;
 
 namespace Vidly.Controllers
 {
@@ -58,13 +59,13 @@ namespace Vidly.Controllers
         [HttpPost] // Actions that modify data should never be accessed by HttpGet so add attribute to make it explicity a Post Action
         //public ActionResult Create(NewCustomerViewModel viewModel) // Model Minding - MVC automatically binds this model to the request data
         [ValidateAntiForgeryToken] // Prevents CSRF attacks - MAKE SURE TO IMPLEMENT IN VIEW TOO!
-        public ActionResult Save(Customer customer) // B/c all of our keys in teh form data of New.cshtml are prefixed with Customer
+        public ActionResult Save(CustomerDto customer) // B/c all of our keys in teh form data of New.cshtml are prefixed with Customer
         {
             if(!ModelState.IsValid)
             {
                 var viewModel = new CustomerFormViewModel
                 {
-                    Customer = customer,
+                    Customer = Mapper.Map<CustomerDto, Customer>(customer),
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
 
@@ -72,7 +73,7 @@ namespace Vidly.Controllers
             }
 
             if(customer.Id == 0)
-                _context.Customers.Add(customer);
+                _context.Customers.Add(Mapper.Map<CustomerDto, Customer>(customer));
             else
             {
                 var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
@@ -87,6 +88,7 @@ namespace Vidly.Controllers
                 //customerInDb.BirthDate = customer.BirthDate;
                 //customerInDb.MembershipTypeId = customer.MembershipTypeId;
                 //customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+                System.Console.WriteLine("");
             }
             _context.SaveChanges();
 

@@ -8,7 +8,7 @@
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" value="" class="form-control" />
+            <input id="customer" name="customer" data-rule-validCustomer="true" data-rule-validCustomerIsDelinquent="true" required type="text" value="" class="form-control" />
         </div>
     </div>
 
@@ -67,6 +67,7 @@
                 }
             ).on("typeahead:select", function (e, customer) {
                 vm.customerId = customer.id;
+                vm.delinquentStatus = customer.delinquent;
             });
 
             var movies = new Bloodhound({
@@ -101,9 +102,17 @@
 
             }, "Please select a valid customer.");
 
+            $.validator.addMethod("validCustomerIsDelinquent", function () {
+                console.log(vm.customerId + " " + vm.delinquentStatus);
+                return !vm.delinquentStatus;
+
+            }, "Please resolve customer's delinquent status.");
+
             $.validator.addMethod("validMovie", function () {
                 return vm.movieIds.length > 0;
             }, "Please select at least one movie.");
+
+            
 
             // There's definitely a better way to do this... 
             // Like I would like to error the movie list instead of the movie input field
