@@ -603,6 +603,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="AppSettings.config" />
+    <Content Include="_CheatSheets\ExtraChallenges.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
