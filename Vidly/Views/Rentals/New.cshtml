@@ -15,14 +15,14 @@
     <div class="form-group">
         <label>Movie</label>
         <div class="tt-container">
-            <input id="movie" name="movie" data-rule-validMovie="true" type="text" value="" class="form-control" />
+            <input id="movie" name="movie" data-rule-validMovie="true" data-rule-validTooManyMovies="true" type="text" value="" class="form-control" />
 
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <ul id="movies" class="list-group">
+            <ul id="movies" class="list-group" >
             </ul>
         </div>
     </div>
@@ -104,6 +104,17 @@
             $.validator.addMethod("validMovie", function () {
                 return vm.movieIds.length > 0;
             }, "Please select at least one movie.");
+
+            // There's definitely a better way to do this... 
+            // Like I would like to error the movie list instead of the movie input field
+            // But for now I'll leave it on the movie input field
+            // I probably won't come back to this.
+            // The front-end logic is also broken b/c there's no 'remove movie' functionality
+            // The clerk would have to refresh the page /shrug.
+
+            $.validator.addMethod("validTooManyMovies", function () {
+                return vm.movieIds.length < 3;
+            }, "Customers can only rent three movies at once.");
 
             var validator = $("#newRental").validate({
                 submitHandler: function () {
