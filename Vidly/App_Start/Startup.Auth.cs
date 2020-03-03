@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -54,8 +55,8 @@ namespace Vidly
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "639078146905989",
-               appSecret: "c45cd56eaa2783c7ac98c0a334706bc6"); //This key has been deprecated.
+               appId: ConfigurationManager.AppSettings["FacebookAppId"],
+               appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]); //This key has been deprecated.
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
