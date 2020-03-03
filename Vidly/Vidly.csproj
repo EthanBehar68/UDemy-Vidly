@@ -194,9 +194,12 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Controllers\Api\ApplicationUserController.cs" />
     <Compile Include="Controllers\Api\NewReturnsController.cs" />
     <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Controllers\ReturnsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Dtos\ApplicationUserDto.cs" />
     <Compile Include="Dtos\NewRentalDto.cs" />
     <Compile Include="Controllers\Api\NewRentalsController.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
@@ -610,6 +613,7 @@
     <Content Include="_CheatSheets\AJAX What Is It .pdf" />
     <Content Include="Views\Rentals\New.cshtml" />
     <Content Include="Views\Returns\New.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

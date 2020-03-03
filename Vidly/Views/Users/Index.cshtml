@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Vidly.Models.ApplicationUser>
+@*
+    Note: I've set the model for this view to IEnumerable<ApplicationUser>.
+    This is a simple interface implemented by the list class. Since
+    in this view we only want to iterate over this list, and we don't
+    need any of the operations in the List class (eg Add, Remove, etc),
+    it's better to use the IEnumerable interface, which allows use to
+    iterate over the list. If in the future, we replace the List with a
+    different data structure, as long as it is enumerable, our view code
+    will remain unchanged.
+    -Mosh Hamedani
+*@
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Application Users</h2>
+
+
+@*
+    Bootbox - will now throw exception b/c customers isn't returned to Index.html in controller
+    Bootbox is getting customers from api so Model is now empty
+    @if (!Model.Any())
+    {
+        <p>We don't have any customers yet.</p>
+    }
+    else
+    {
+*@
+<table id="applicationUsers" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Application User</th>
+            <th>DrivingLicense</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#applicationUsers").DataTable({
+                ajax: {
+                    url: "/api/applicationuser",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "userName"
+                    },
+                    {
+                        data: "drivingLicense"
+                    },
+                    {
+                        data: "phone"
+                    }
+                ]
+            });
+        });
+    </script>
+}
