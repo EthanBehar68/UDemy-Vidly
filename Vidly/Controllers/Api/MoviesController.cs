@@ -3,7 +3,8 @@ using System;
 using System.Linq;
 using System.Web.Http;
 using Vidly.Dtos;
-using Vidly.Models;using System.Data.Entity;
+using Vidly.Models;
+using System.Data.Entity;
 
 
 namespace Vidly.Controllers.Api

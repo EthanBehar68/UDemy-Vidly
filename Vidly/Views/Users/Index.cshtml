@@ -18,36 +18,28 @@
 
 <h2>Application Users</h2>
 
-
-@*
-    Bootbox - will now throw exception b/c customers isn't returned to Index.html in controller
-    Bootbox is getting customers from api so Model is now empty
-    @if (!Model.Any())
-    {
-        <p>We don't have any customers yet.</p>
-    }
-    else
-    {
-*@
-<table id="applicationUsers" class="table table-bordered table-hover">
+<table id="users" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Application User</th>
             <th>DrivingLicense</th>
             <th>Phone</th>
+            <th>User Role</th>
         </tr>
     </thead>
     <tbody>
     </tbody>
+    @Html.AntiForgeryToken()
 </table>
 
 @section scripts
 {
+    @Scripts.Render("~/bundles/jqueryval");
     <script>
         $(document).ready(function () {
-            var table = $("#applicationUsers").DataTable({
+            var table = $("#users").DataTable({
                 ajax: {
-                    url: "/api/applicationuser",
+                    url: "/api/users",
                     dataSrc: ""
                 },
                 columns: [
@@ -59,9 +51,73 @@
                     },
                     {
                         data: "phone"
+                    },
+                    {
+                        data: "isAdmin",
+                        render: function (data, type, user) {
+                            if (user.isAdmin)
+                                return "<button class='btn-link js-demote' data-id=" + user.id + ">Demote</button>";
+                            else
+                                return "<button class='btn-link js-promote' data-id=" + user.id + ">Promote</button>";
+                        }
                     }
                 ]
             });
+
+            $("#users").on("click", ".js-demote", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to demote this application user?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/users/" + button.attr("data-id"),
+                            method: "PUT"//,
+                            //success: function () {
+                            //    toastr.success("Demotion successfully recorded.");
+                            //},
+                            //error: function () {
+                            //    toastr.error("Something went wrong with the demotion.");
+                            //}
+                        })
+                            .done(function () {
+                                toastr.success("Demotion successfully recorded.");
+                                 table.ajax.reload();
+                            })
+                            .fail(function () {
+                                toastr.error("Something went wrong with the demotion.");
+                            });
+                    }
+                });
+
+            });
+
+            $("#users").on("click", ".js-promote", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to promote this application user?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/users/" + button.attr("data-id"),
+                            method: "PUT"//,
+                            //success: function () {
+                            //    toastr.success("Promotion successfully recorded.");
+                            //},
+                            //error: function () {
+                            //    toastr.error("Something went wrong with the promotion.");
+                            //}
+                        })
+                            .done(function () {
+                                toastr.success("Promotion successfully recorded.");
+                                table.ajax.reload();
+                            })
+                            .fail(function () {
+                                toastr.error("Something went wrong with the promotion.");
+                            });
+                    }
+                });
+
+            });
         });
+
     </script>
 }
