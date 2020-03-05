@@ -16,3 +16,13 @@ This project is a video rental application. By the end of this course, I'll will
  * And much more...
 
 Link To Course: https://www.udemy.com/course/the-complete-aspnet-mvc-5-course/
+
+# Extra Challenges Completed
+
+At the end of the course Mosh Hamedani gave some extra challenges. I finished them as best as I could. Although there aren't any resources to inform me how well/practical my approach at solving these problems were. 
+
+* Add the ability for end users to check movies in.
+* Add the logic to limit how many movies a customer can have rented at one time.
+* Add the ability to allow end users mark customers as delinquent on payment as well as the ability to remove this flag. This could be used so that these customers cannot rent movies until they are no longer delinquent on payment.
+* Add the ability to allow end users to apply a discounted rate to customers.
+* Add the ability to allow end users to maintain both users and roles through the user interface. This probably should be limited to an Admin role. 
