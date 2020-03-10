@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Vidly.Models;
+using UDemyVidly.Models;
 
-namespace Vidly
+namespace UDemyVidly.App_Start
 {
     public class EmailService : IIdentityMessageService
     {

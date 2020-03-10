@@ -5,10 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using Vidly.Dtos;
-using Vidly.Models;
+using UDemyVidly.Dtos;
+using UDemyVidly.Models;
 
-namespace Vidly.Controllers.Api
+namespace UDemyVidly.Controllers.Api
 {
 
     // I'm willing to bet this isn't

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Vidly.Models;
+using UDemyVidly.Models;
 
-namespace Vidly.ViewModels
+namespace UDemyVidly.ViewModels
 {
     public class CustomerFormViewModel
     {

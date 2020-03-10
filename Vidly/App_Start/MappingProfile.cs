@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Vidly.Dtos;
-using Vidly.Models;
+using UDemyVidly.Dtos;
+using UDemyVidly.Models;
 
-namespace Vidly.App_Start
+namespace UDemyVidly.App_Start
 {
     public class MappingProfile : Profile
     {

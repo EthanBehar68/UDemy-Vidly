@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Vidly.Dtos
+namespace UDemyVidly.Dtos
 {
     public class ApplicationUserDto
     {

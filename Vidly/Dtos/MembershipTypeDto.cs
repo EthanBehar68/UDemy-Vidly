@@ -1,4 +1,4 @@
-﻿namespace Vidly.Dtos
+﻿namespace UDemyVidly.Dtos
 {
     public class MembershipTypeDto
     {

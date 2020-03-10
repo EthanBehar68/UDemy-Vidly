@@ -1,12 +1,12 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using Vidly.Models;
+using UDemyVidly.Models;
 using System.Data.Entity;
-using Vidly.ViewModels;
+using UDemyVidly.ViewModels;
 using AutoMapper;
-using Vidly.Dtos;
+using UDemyVidly.Dtos;
 
-namespace Vidly.Controllers
+namespace UDemyVidly.Controllers
 {
     public class CustomersController : Controller
     {

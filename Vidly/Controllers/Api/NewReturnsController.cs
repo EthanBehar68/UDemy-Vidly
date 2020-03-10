@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Http;
-using Vidly.Models;
+using UDemyVidly.Models;
 
-namespace Vidly.Controllers.Api
+namespace UDemyVidly.Controllers.Api
 {
 
     public class NewReturnsController : ApiController

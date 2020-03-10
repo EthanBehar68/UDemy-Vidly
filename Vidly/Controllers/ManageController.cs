@@ -1,14 +1,14 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Vidly.ViewModels;
+using UDemyVidly.App_Start;
+using UDemyVidly.ViewModels;
 
-namespace Vidly.Controllers
+namespace UDemyVidly.Controllers
 {
     [Authorize]
     public class ManageController : Controller

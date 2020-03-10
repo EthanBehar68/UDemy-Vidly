@@ -2,12 +2,12 @@
 using System;
 using System.Linq;
 using System.Web.Http;
-using Vidly.Dtos;
-using Vidly.Models;
+using UDemyVidly.Dtos;
+using UDemyVidly.Models;
 using System.Data.Entity;
 
 
-namespace Vidly.Controllers.Api
+namespace UDemyVidly.Controllers.Api
 {
     public class MoviesController : ApiController
     {

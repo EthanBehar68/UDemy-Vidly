@@ -3,9 +3,9 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Vidly.App_Start;
+using UDemyVidly.App_Start;
 
-namespace Vidly
+namespace UDemyVidly
 {
     public class MvcApplication : System.Web.HttpApplication
     {

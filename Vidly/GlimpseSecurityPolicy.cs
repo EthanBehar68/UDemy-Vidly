@@ -4,7 +4,7 @@
 using Glimpse.AspNet.Extensions;
 using Glimpse.Core.Extensibility;
 
-namespace Vidly
+namespace UDemyVidly
 {
     public class GlimpseSecurityPolicy:IRuntimePolicy
     {

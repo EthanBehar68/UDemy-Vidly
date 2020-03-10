@@ -1,18 +1,15 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Vidly.Models;
-using Vidly.ViewModels;
+using UDemyVidly.App_Start;
+using UDemyVidly.Models;
+using UDemyVidly.ViewModels;
 
-namespace Vidly.Controllers
+namespace UDemyVidly.Controllers
 {
     [Authorize]
     public class AccountController : Controller

@@ -5,9 +5,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
-using Vidly.Models;
+using UDemyVidly.Models;
 
-namespace Vidly
+namespace UDemyVidly.App_Start
 {
     public partial class Startup
     {

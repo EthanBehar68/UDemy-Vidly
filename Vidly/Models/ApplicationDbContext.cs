@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Vidly.Models
+namespace UDemyVidly.Models
 {
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

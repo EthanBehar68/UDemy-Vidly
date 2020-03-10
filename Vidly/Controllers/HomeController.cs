@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Vidly.Controllers
+namespace UDemyVidly.Controllers
 {
     [AllowAnonymous]
     public class HomeController : Controller

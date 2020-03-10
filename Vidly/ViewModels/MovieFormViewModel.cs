@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Vidly.Models;
+using UDemyVidly.Models;
 
-namespace Vidly.ViewModels
+namespace UDemyVidly.ViewModels
 {
     // Example of:::Pure View Model:::
     // Replace Movie reference with all of its properties

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Serialization;
 using System.Web.Http;
 
-namespace Vidly
+namespace UDemyVidly.App_Start
 {
     public static class WebApiConfig
     {
