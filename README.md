@@ -26,3 +26,5 @@ At the end of the course Mosh Hamedani gave some extra challenges. I finished th
 * Add the ability to allow end users mark customers as delinquent on payment as well as the ability to remove this flag. This could be used so that these customers cannot rent movies until they are no longer delinquent on payment.
 * Add the ability to allow end users to apply a discounted rate to customers.
 * Add the ability to allow end users to maintain both users and roles through the user interface. This probably should be limited to an Admin role. 
+
+
