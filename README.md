@@ -1,4 +1,4 @@
-# VidlyUDemy
+# UDemyVidly
 
 The work I did when going through Mosh Hamedani's ASP.NET MVC 5 course.
 
